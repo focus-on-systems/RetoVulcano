@@ -1,0 +1,5 @@
+<div class="flex flex-row overflow-x-auto gap-4 p-4">
+  @for (news of miniNews | async; track news.title) {
+    <app-mini-news [data]="news"></app-mini-news>
+  }
+</div>

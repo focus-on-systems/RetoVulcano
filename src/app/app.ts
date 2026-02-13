@@ -1,5 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import {MiniNewsSection} from '../news/mini-news-section/mini-news-section';
+import {Footer} from './footer/footer';
 
 /**
  * @description
@@ -10,7 +12,7 @@ import { RouterOutlet } from '@angular/router';
  */
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, MiniNewsSection, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

@@ -1,0 +1,17 @@
+<div class="min-w-75 border rounded p-4 shadow-md bg-white">
+  <h3 class="text-lg font-bold">{{ data.title }}</h3>
+  <p class="text-sm text-gray-500">{{ data.date | date }}</p>
+  @if (data.images) {
+    @for (image of data.images.Gallery; track image.asset._ref) {
+      <div
+        class="w-full h-48 bg-cover bg-center rounded-md mb-2"
+        [style.backgroundImage]="'url(' + image.asset.url + ')'"
+        [attr.aria-label]="image.alt">
+      </div>
+    }
+  }
+  <p class="mt-2">{{ data.short_description }}</p>
+  @if (data.author) {
+    <p class="text-xs text-gray-400 mt-2">Por {{ data.author }}</p>
+  }
+</div>
