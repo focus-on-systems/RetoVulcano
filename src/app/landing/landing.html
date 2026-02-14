@@ -1,0 +1,32 @@
+<div class="relative h-screen w-full overflow-hidden bg-black">
+  <img
+    src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+    alt="Background"
+    class="absolute inset-0 h-full w-full object-cover opacity-60 grayscale contrast-125"
+  />
+
+  <!-- Content Overlay -->
+  <div class="absolute inset-0 z-10 flex flex-col items-center justify-center text-white">
+    <img src="https://retovulcano.com/wp-content/uploads/2025/11/logo-reto-vulcano-rojo-letra-negra-1.png?w=1024"
+         class="h-80"
+         alt="RETO VULCANO">
+    <p class="mt-8 text-3xl md:text-4xl font-bold uppercase tracking-widest bg-red-700 px-6 py-2 transform skew-x-12 shadow-lg">
+      15 . NOV . 2026
+    </p>
+
+    <!-- Scroll Down Arrow -->
+    <div class="absolute bottom-10 animate-bounce">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-12 w-12 text-red-600">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+      </svg>
+    </div>
+  </div>
+</div>
+
+<div class="bg-stone-900 text-gray-100">
+  <app-mini-news-section></app-mini-news-section>
+
+  <landing-info></landing-info>
+
+  <current-edition-info></current-edition-info>
+</div>

@@ -1,6 +1,7 @@
 import {ImageGallery} from './gallery-image';
 
 export interface INews {
+  _id: string;
   title: string;
   date: string;
   short_description: string;
@@ -10,4 +11,4 @@ export interface INews {
   author?: string;
 }
 
-export type IMiniNews = Pick<INews, 'title' | 'date' | 'short_description' | 'images' | 'author'>;
+export type IMiniNews = Pick<INews, '_id' | 'title' | 'date' | 'short_description' | 'images' | 'author'>;

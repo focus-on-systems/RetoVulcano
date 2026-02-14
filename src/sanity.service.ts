@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { createClient } from '@sanity/client';
 import {createImageUrlBuilder} from '@sanity/image-url';
-import {IMiniNews} from './news/news';
+import {IMiniNews, INews} from './news/news';
 
 @Injectable({
   providedIn: 'root',
@@ -18,6 +18,7 @@ export class SanityService {
 
   public async getRecentNews(since: Date): Promise<IMiniNews[]> {
     const sanityQuery = `*[_type == 'news' && date > $since]{
+        _id,
         author,
         date,
         description,
@@ -37,6 +38,29 @@ export class SanityService {
       });
     } catch (e) {
       // TODO: Handle error in UI!
+      console.error("Failed to fetch news", e);
+      return Promise.reject(e);
+    }
+  }
+
+  public async getNews(id: string): Promise<INews> {
+    const sanityQuery = `*[_type == 'news' && _id == $id][0]{
+        _id,
+        author,
+        date,
+        description,
+        images,
+        short_description,
+        title,
+        body
+      }`;
+
+    try {
+      const news = await this.client.fetch<INews>(sanityQuery, {id});
+      if (news && news.images)
+        news.images.Gallery.forEach(image => image.asset.url = this.imgUrlBuilder.image(image.asset).url());
+      return news;
+    } catch (e) {
       console.error("Failed to fetch news", e);
       return Promise.reject(e);
     }

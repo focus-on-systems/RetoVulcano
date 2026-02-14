@@ -1,22 +1,29 @@
-<footer class="bg-gray-800 text-white py-8 mt-8">
+<footer class="bg-black text-white py-12 border-t-4 border-red-700">
   <div class="container mx-auto px-4 flex flex-col items-center text-center">
 
-    <div class="flex flex-col md:flex-row items-center gap-4 mb-6">
-      <div class="flex items-center gap-2">
-        <img src="https://placehold.co/50x50" alt="RetoVulcano Logo" class="w-12 h-12 rounded-full">
-        <span class="font-bold text-lg">RetoVulcano</span>
+    <div class="flex flex-col md:flex-row items-center gap-8 mb-8">
+      <div class="flex items-center gap-3 group">
+        <div class="w-12 h-12 bg-red-600 rounded-none transform rotate-45 group-hover:rotate-0 transition-transform duration-300 flex items-center justify-center">
+          <span class="text-white font-black text-xl transform -rotate-45 group-hover:rotate-0">RV</span>
+        </div>
+        <span class="font-black text-2xl uppercase tracking-widest">RetoVulcano</span>
       </div>
-      <span class="hidden md:inline">es organizada por</span>
-      <div class="flex items-center gap-2">
-        <img src="https://placehold.co/50x50" alt="Gabomonky Logo" class="w-12 h-12 rounded-full">
-        <span class="font-bold text-lg">Gabomonky</span>
+      <span class="hidden md:inline text-gray-500 text-sm uppercase tracking-widest">Organizado por</span>
+      <div class="flex items-center gap-3 group">
+        <div class="w-12 h-12 bg-gray-700 rounded-none transform rotate-45 group-hover:rotate-0 transition-transform duration-300 flex items-center justify-center">
+          <span class="text-white font-black text-xl transform -rotate-45 group-hover:rotate-0">GM</span>
+        </div>
+        <span class="font-black text-2xl uppercase tracking-widest">Gabomonky</span>
       </div>
     </div>
 
-    <p class="italic text-gray-400 mb-4">"No se trata de qué tan fuerte golpees. Se trata de qué tan fuerte pueden golpearte y seguir avanzando." - Rocky Balboa</p>
+    <p class="italic text-gray-400 mb-8 max-w-2xl text-lg font-light border-l-2 border-red-600 pl-4">
+      "No se trata de qué tan fuerte golpees. Se trata de qué tan fuerte pueden golpearte y seguir avanzando."
+      <br/><span class="text-red-500 font-bold not-italic text-sm uppercase tracking-wide mt-2 block">- Rocky Balboa</span>
+    </p>
 
-    <div class="text-sm text-gray-500">
-      <p>&copy; 2026 Benjamín Guzmán. Todos los derechos reservados.</p>
+    <div class="text-xs text-gray-600 uppercase tracking-widest">
+      <p>&copy; 2026 Benjamín Guzmán. Todos los derechos reservados. | <span class="text-red-700 hover:text-red-500 cursor-pointer">Aviso de Privacidad</span></p>
     </div>
   </div>
 </footer>
