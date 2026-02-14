@@ -17,6 +17,7 @@ export class SanityService {
   private readonly imgUrlBuilder = createImageUrlBuilder(this.client);
 
   public async getRecentNews(since: Date): Promise<IMiniNews[]> {
+    // TODO search only by TAG!!
     const sanityQuery = `*[_type == 'news' && date > $since]{
         _id,
         author,
@@ -44,6 +45,7 @@ export class SanityService {
   }
 
   public async getNews(id: string): Promise<INews> {
+    // TODO search only by TAG!!
     const sanityQuery = `*[_type == 'news' && _id == $id][0]{
         _id,
         author,
