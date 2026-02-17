@@ -1,12 +1,13 @@
 import {ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
 import { INews } from '../news';
-import { DatePipe, NgStyle } from '@angular/common';
+import { DatePipe, NgTemplateOutlet } from '@angular/common';
 import {ActivatedRoute} from '@angular/router';
 import {SanityService} from '../../sanity.service';
+import { BackButtonComponent } from '../../app/back-button';
 
 @Component({
   selector: 'app-news',
-  imports: [DatePipe],
+  imports: [DatePipe, BackButtonComponent, NgTemplateOutlet],
   templateUrl: './news.html',
   styleUrl: './news.css',
   standalone: true,
@@ -29,5 +30,10 @@ export class News implements OnInit {
         this.changeRef.detectChanges();
       });
     }
+  }
+
+  getLink(markKey: string, markDefs: any[]): string | null {
+    const def = markDefs.find(m => m._key === markKey);
+    return def ? def.href : null;
   }
 }

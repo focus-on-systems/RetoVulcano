@@ -10,9 +10,11 @@
     <img src="https://retovulcano.com/wp-content/uploads/2025/11/logo-reto-vulcano-rojo-letra-negra-1.png?w=1024"
          class="h-80"
          alt="RETO VULCANO">
-    <p class="mt-8 text-3xl md:text-4xl font-bold uppercase tracking-widest bg-red-700 px-6 py-2 transform skew-x-12 shadow-lg">
-      15 . NOV . 2026
-    </p>
+    @if (editionDate) {
+      <p class="mt-8 text-3xl md:text-4xl font-bold uppercase tracking-widest bg-red-700 px-6 py-2 transform skew-x-12 shadow-lg">
+        {{ editionDate | date:'dd . MMM . yyyy' | uppercase }}
+      </p>
+    }
 
     <!-- Scroll Down Arrow -->
     <div class="absolute bottom-10 animate-bounce">

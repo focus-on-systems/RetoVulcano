@@ -1,11 +1,11 @@
 <div class="container mx-auto px-4 py-16 bg-stone-900">
   <div class="text-center mb-16">
     <h2 class="text-5xl md:text-6xl font-black text-white mb-6 uppercase tracking-tighter">
-      <span class="border-b-4 border-red-600 pb-2">Edición 2026</span>
+      <span class="border-b-4 border-red-600 pb-2">Edición {{ data.date | date:'yyyy' }}</span>
     </h2>
     <p class="text-2xl text-red-500 italic font-bold uppercase tracking-widest mb-6">"En Reto Vulcano, ¡nadie camina solo!"</p>
     <p class="mt-4 text-gray-300 max-w-3xl mx-auto text-lg leading-relaxed font-light">
-      Prepárate para la edición más desafiante hasta la fecha. Este año, hemos diseñado rutas que pondrán a prueba tu resistencia física y mental, pero recuerda que la comunidad siempre estará ahí para apoyarte en cada paso.
+      {{ data.miniDescription }}
     </p>
 
     <!-- Botón de Inscripción -->
@@ -175,4 +175,18 @@
       </div>
     </div>
   </div>
+
+  @if (data.description) {
+    <div class="prose prose-invert prose-lg max-w-none mt-12 text-gray-300 space-y-6">
+      @for (block of data.description; track block._key) {
+        @if (block._type === 'block') {
+          <p class="leading-relaxed">
+            @for (child of block.children; track child._key) {
+              <span [class.font-bold]="child.marks?.includes('strong')" [class.italic]="child.marks?.includes('em')">{{ child.text }}</span>
+            }
+          </p>
+        }
+      }
+    </div>
+  }
 </div>
