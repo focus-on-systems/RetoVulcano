@@ -1,2 +1,78 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
+
+/* para el reto vulcano */
+@theme {
+  --color-primary-50: #fef2f2;
+  --color-primary-100: #fee2e2;
+  --color-primary-200: #fecaca;
+  --color-primary-300: #fca5a5;
+  --color-primary-400: #f87171;
+  --color-primary-500: #ef4444;
+  --color-primary-600: #dc2626;
+  --color-primary-700: #b91c1c;
+  --color-primary-800: #991b1b;
+  --color-primary-900: #7f1d1d;
+  --color-primary-950: #450a0a;
+
+  --color-surface-50: #fafaf9;
+  --color-surface-100: #f5f5f4;
+  --color-surface-200: #e7e5e4;
+  --color-surface-300: #d6d3d1;
+  --color-surface-400: #a8a29e;
+  --color-surface-500: #78716c;
+  --color-surface-600: #57534e;
+  --color-surface-700: #44403c;
+  --color-surface-800: #292524;
+  --color-surface-900: #1c1917;
+  --color-surface-950: #0c0a09;
+}
+
+
+/*@theme {*/
+/*   Primary - Teal Palette */
+/*  --color-primary-50: #f0fdfa;*/
+/*  --color-primary-100: #ccfbf1;*/
+/*  --color-primary-200: #99f6e4;*/
+/*  --color-primary-300: #5eead4;*/
+/*  --color-primary-400: #2dd4bf;*/
+/*  --color-primary-500: #14b8a6;*/
+/*  --color-primary-600: #0d9488;*/
+/*  --color-primary-700: #0f766e;*/
+/*  --color-primary-800: #115e59;*/
+/*  --color-primary-900: #134e4a;*/
+/*  --color-primary-950: #042f2e;*/
+
+  /* Surface - Inverted for Light Mode */
+  /* 900 is now Light (Background), 800 is White (Cards), 700 is Light Gray (Borders) */
+  /*--color-surface-50: #020617;*/
+  /*--color-surface-100: #0f172a;*/
+  /*--color-surface-200: #1e293b;*/
+  /*--color-surface-300: #334155;*/
+  /*--color-surface-400: #475569;*/
+  /*--color-surface-500: #64748b;*/
+  /*--color-surface-600: #94a3b8;*/
+  /*--color-surface-700: #e2e8f0;*/
+  /*--color-surface-800: #ffffff;*/
+  /*--color-surface-900: #f8fafc;*/
+  /*--color-surface-950: #ffffff;*/
+
+  /* Color Overrides for Light Theme Adaptation */
+  /* Inverting White/Black and Gray Scale to support existing HTML classes */
+
+  /*--color-white: #0f172a; !* Dark text for 'text-white' classes *!*/
+  /*--color-black: #ffffff; !* Light background for 'bg-black' classes *!*/
+
+  /* Inverted Gray Scale */
+  /*--color-gray-50: #020617;*/
+  /*--color-gray-100: #1e293b; !* Dark text for 'text-gray-100' *!*/
+  /*--color-gray-200: #334155;*/
+  /*--color-gray-300: #475569; !* Medium-Dark text for 'text-gray-300' *!*/
+  /*--color-gray-400: #64748b;*/
+  /*--color-gray-500: #94a3b8;*/
+  /*--color-gray-600: #cbd5e1;*/
+  /*--color-gray-700: #e2e8f0;*/
+  /*--color-gray-800: #f1f5f9;*/
+  /*--color-gray-900: #f8fafc;*/
+  /*--color-gray-950: #ffffff;*/
+/*}*/

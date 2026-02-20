@@ -1,5 +1,5 @@
 <app-back-button></app-back-button>
-<div class="container mx-auto bg-stone-900 rounded-none shadow-2xl overflow-hidden pb-12 border border-stone-800">
+<div class="container mx-auto bg-surface-900 rounded-none shadow-2xl overflow-hidden pb-12 border border-surface-800">
   <!-- Header Image -->
   @if (data.images?.Gallery && data.images!.Gallery.length > 0) {
     <div class="relative h-96 w-full group">
@@ -7,11 +7,11 @@
       <img [src]="data.images!.Gallery[0].asset.url" [alt]="data.images!.Gallery[0].alt || data.title" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
       <div class="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent"></div>
       <div class="absolute bottom-0 left-0 p-8 w-full">
-        <div class="border-l-4 border-red-600 pl-6 mb-4">
+        <div class="border-l-4 border-primary-600 pl-6 mb-4">
           <h1 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mb-2 drop-shadow-lg">{{ data.title }}</h1>
         </div>
         <div class="flex items-center gap-6 text-sm uppercase tracking-widest">
-          <span class="text-red-500 font-bold bg-black/50 px-3 py-1">{{ data.date | date:'longDate' }}</span>
+          <span class="text-primary-500 font-bold bg-black/50 px-3 py-1">{{ data.date | date:'longDate' }}</span>
           @if (data.author) {
             <span class="text-gray-300 font-light">Por <span class="text-white font-bold">{{ data.author }}</span></span>
           }
@@ -19,12 +19,12 @@
       </div>
     </div>
   } @else {
-    <div class="p-12 border-b border-stone-800 bg-stone-900">
-      <div class="border-l-4 border-red-600 pl-6 mb-6">
+    <div class="p-12 border-b border-surface-800 bg-surface-900">
+      <div class="border-l-4 border-primary-600 pl-6 mb-6">
         <h1 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mb-2">{{ data.title }}</h1>
       </div>
       <div class="flex items-center gap-6 text-sm uppercase tracking-widest text-gray-400">
-        <span class="text-red-500 font-bold">{{ data.date | date:'longDate' }}</span>
+        <span class="text-primary-500 font-bold">{{ data.date | date:'longDate' }}</span>
         @if (data.author) {
           <span>Por <span class="text-white font-bold">{{ data.author }}</span></span>
         }
@@ -32,9 +32,9 @@
     </div>
   }
 
-  <div class="p-8 md:p-12 xl:p-20 bg-stone-900 text-gray-300">
+  <div class="p-8 md:p-12 xl:p-20 bg-surface-900 text-gray-300">
     <!-- Short Description -->
-    <p class="text-xl md:text-2xl text-gray-100 font-light leading-relaxed mb-10 border-l-4 border-red-600 pl-6 italic">
+    <p class="text-xl md:text-2xl text-gray-100 font-light leading-relaxed mb-10 border-l-4 border-primary-600 pl-6 italic">
       {{ data.short_description }}
     </p>
 
@@ -69,7 +69,7 @@
                 }
               </h3>
             } @else if (block.listItem === 'bullet') {
-              <ul class="list-disc list-inside pl-4 space-y-2 marker:text-red-500">
+              <ul class="list-disc list-inside pl-4 space-y-2 marker:text-primary-500">
                 <li class="text-gray-300">
                   @for (child of block.children; track child._key) {
                     <ng-container *ngTemplateOutlet="spanRenderer; context: {$implicit: child, markDefs: block.markDefs}"></ng-container>
@@ -77,7 +77,7 @@
                 </li>
               </ul>
             } @else if (block.listItem === 'number') {
-              <ol class="list-decimal list-inside pl-4 space-y-2 marker:text-red-500 marker:font-bold">
+              <ol class="list-decimal list-inside pl-4 space-y-2 marker:text-primary-500 marker:font-bold">
                 <li class="text-gray-300">
                   @for (child of block.children; track child._key) {
                     <ng-container *ngTemplateOutlet="spanRenderer; context: {$implicit: child, markDefs: block.markDefs}"></ng-container>
@@ -94,7 +94,7 @@
           }
           @if (block._type === 'image') {
              <div class="my-8">
-               <img [src]="block.asset?.url" [alt]="block.alt" class="w-full h-auto rounded-none border border-stone-700 grayscale hover:grayscale-0 transition-all duration-500 shadow-lg"/>
+               <img [src]="block.asset?.url" [alt]="block.alt" class="w-full h-auto rounded-none border border-surface-700 grayscale hover:grayscale-0 transition-all duration-500 shadow-lg"/>
              </div>
           }
         }
@@ -103,14 +103,14 @@
 
     <!-- Gallery (Rest of the images) -->
     @if (data.images?.Gallery && data.images!.Gallery.length > 1) {
-      <div class="mt-16 pt-10 border-t border-stone-800">
+      <div class="mt-16 pt-10 border-t border-surface-800">
         <h3 class="text-3xl font-black text-white mb-8 uppercase tracking-wide flex items-center">
-          <span class="w-8 h-1 bg-red-600 mr-4"></span> Galería
+          <span class="w-8 h-1 bg-primary-600 mr-4"></span> Galería
         </h3>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- Skipping the first one as it is used in header -->
           @for (img of data.images!.Gallery.slice(1); track img._key) {
-            <div class="relative h-64 overflow-hidden group cursor-pointer border border-stone-800">
+            <div class="relative h-64 overflow-hidden group cursor-pointer border border-surface-800">
               <img [src]="img.asset.url" [alt]="img.alt || 'Gallery image'" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110">
               <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300"></div>
             </div>
